@@ -1,17 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
-    static String convert(String s) {
+    static String reverse(String s) {
         String result = "";
 
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-
-            if (ch >= 'a' && ch <= 'z') {
-                ch = (char)(ch - 32);
-            }
-
-            result = result + ch;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            result = result + s.charAt(i);
         }
 
         return result;
@@ -23,6 +17,6 @@ public class Main {
         System.out.print("Enter a string: ");
         String s = sc.nextLine();
 
-        System.out.println(convert(s));
+        System.out.println(reverse(s));
     }
 }

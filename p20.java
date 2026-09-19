@@ -1,27 +1,25 @@
 import java.util.Scanner;
 
-public class Main {
-    static int frequency(String s, char target) {
-        int count = 0;
-
-        for (int i = 0; i < s.length(); i++) {
+public class p20 {
+    static int lastOccurrence(String s, char target) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == target) {
-                count++;
+                return i;
             }
         }
 
-        return count;
+        return -1;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter a string: ");
+        System.out.print("Enter string: ");
         String s = sc.nextLine();
 
         System.out.print("Enter character: ");
         char ch = sc.next().charAt(0);
 
-        System.out.println("Frequency = " + frequency(s, ch));
+        System.out.println(lastOccurrence(s, ch));
     }
 }

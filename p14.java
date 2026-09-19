@@ -1,17 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
-    static String convert(String s) {
+    static String removeSpaces(String s) {
         String result = "";
 
         for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-
-            if (ch >= 'a' && ch <= 'z') {
-                ch = (char)(ch - 32);
+            if (s.charAt(i) != ' ') {
+                result = result + s.charAt(i);
             }
-
-            result = result + ch;
         }
 
         return result;
@@ -23,6 +19,6 @@ public class Main {
         System.out.print("Enter a string: ");
         String s = sc.nextLine();
 
-        System.out.println(convert(s));
+        System.out.println(removeSpaces(s));
     }
 }
